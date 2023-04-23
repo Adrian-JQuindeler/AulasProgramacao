@@ -1,10 +1,9 @@
 # AulasProgramação
 
-Repositório para minhas aulas EAD de programação
+Repositório para minhas praticas/aulas EAD de programação
 
-Commits de Python são relacinados a Series
+Python: Minha primeira linguagem de programação
 
-Commits de Java são relacinados a musicas
+Java: Linguagem que estou atualmente aprendendo
 
-Commits de C# são relacinados a Filmes
-
+C++: Pretendo aprender quando terminar Java
