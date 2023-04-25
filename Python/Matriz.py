@@ -19,6 +19,6 @@ for l in range(0,3,1):
         print(f"[{MatrizInterativa[l][c]}] ", end="")
     print()
 
-print(f"Diagonal Principal: ")
+print(f"Diagonal Principal: ", end="")
 for i in range(0,3,1):
     print(f"{MatrizInterativa[i][i]}", end=", " if i < 2 else ".")
