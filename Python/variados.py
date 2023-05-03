@@ -38,3 +38,21 @@ elif idade < 16:
 else:
     print("Você não é obrigado a votar")
     
+    print("-----Média de notas Faesa------")
+c1 = float(input("Primeira nota: "))
+c2 = float(input("Segunda nota: "))
+c3 = float(input("Terceira nota: "))
+media = (c1 + c2 + c3) / 3
+if media >= 7:
+    print("Você foi aprovado, logo boas férias")
+else:
+    precisa = media * 0.6
+    print(f"reprovado, você precisa de {precisa} pontos para passar")
+    final = float(input("Nota final: "))
+    resultado = final * 0.4 + media * 0.6
+    print(resultado)
+    if resultado > 5:
+        print("Você foi aprovado, logo, boas férias")
+    else:
+        print("REPROVADO!!!")
+
