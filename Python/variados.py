@@ -92,3 +92,16 @@ tempo = distancia / velocidade
 print(f"\nVocê irá demorar {(tempo/60)/60:.2f} horas no percurso")
 print(f"gastará {gasto:.1f} litros de gasolina")
 print(f"e o preço será de R$ {valor:.3f}")
+
+print("\n\033[1m-------------\033[m")
+print("-----Conversor de temperatura------")
+print("\033[1m-------------\033[m\n")
+
+# Rescebendo o valor em fahrenheit
+valor = int(input("Diga a temperatura em fahrenheit: "))
+
+# Convertendo para Celcius
+celcius = (valor - 32) * 5/9
+
+# Mostrando o resultado
+print(f"{valor}°F convertido em celcius é: {celcius:.2f}°C")
