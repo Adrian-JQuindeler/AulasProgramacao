@@ -1,8 +1,8 @@
 def MostrarProdutos(listaDeProdutos):
-    print("\nPRODUTOS: ")
+    print("\033[1;30;41m\nPRODUTOS: \033[m")
     for i in range(0, len(listaDeProdutos)):
-        print(f"    {listaDeProdutos[i][0]:.<25}", end = "")
-        print(f"{listaDeProdutos[i][1]:.2f}")
+        print(f"\033[1;30;41m    {listaDeProdutos[i][0]:.<24}", end = "")
+        print(f"{listaDeProdutos[i][1]:.2f} \033[m")
 
 def ColocarNoCarrinho(carrinho, listaDeProdutos):
     while True:
@@ -35,12 +35,9 @@ listaDeProdutos = [
     ["[7] MONITOR", 861.47]]
 
 #Mostrando o nome da empresa
-print("\033[4,45m-----------------------------------\033[m")
-print("\033[1,45m{:^38}".format("Adrian's & Adrian's LTDA.\033[m"))
-print("\033[9,45m___________________________________\033[m\n")
-
-#Mostrando os produtos de forma organizada
-MostrarProdutos(listaDeProdutos)
+print("\033[1;30;44m===================================\033[m")
+print("\033[1;30;44m     Adrian's & Adrian's LTDA.     \033[m")
+print("\033[1;30;44m===================================\033[m")
 
 carrinho = []
 while True:
