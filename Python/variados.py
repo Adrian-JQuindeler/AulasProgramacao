@@ -1,5 +1,5 @@
 print("\n\033[1m----------------------------------\033[m")
-print("\033[1m---POSITIVO, NEGATIVO OU NEUTRO---\033[m")
+print("\033[1m   POSITIVO, NEGATIVO OU NEUTRO   \033[m")
 print("\033[1m----------------------------------\033[m\n")
 
 num = float(input("Digite o número: "))
@@ -12,35 +12,35 @@ else:
     print(f"0 é neutro")
 
 print("\n\033[1m---------------\033[m")
-print("\033[1m---ORÇAMENTO---\033[m")
+print("\033[1m   ORÇAMENTO   \033[m")
 print("\033[1m---------------\033[m\n")
 
 salario = float(input("Informe seu salário: "))
 gastos = float(input("Informe seu gasto com despesas: "))
 if salario > gastos:
-    print("Gastos dentro do orçamento")
+    print(f"Gastos dentro do orçamento, sobram R$ {salario - gastos}")
 elif salario < gastos:
     print("Orçamento estourado")
 else:
     print("Salario zerado")
 
-print("\n\033[1m-------------\033[m")
-print("\033[1m---VOTAÇÃO---\033[m")
-print("\033[1m-------------\033[m\n")
+print("\n\033[1m---------------\033[m")
+print("\033[1m    VOTAÇÃO   \033[m")
+print("\033[1m---------------\033[m\n")
 
 idade = int(input("Digite sua idade: "))
 if idade >= 18 and idade < 65:
     print("Você é obrigado a votar")
-    print("[13]")
-    print("[22]")
+    print("[13] ou [22]?")
 elif idade < 16:
     print("Você não tem idade para votar!")
 else:
-    print("Você não é obrigado a votar")
+    print("Você não é obrigado a votar, mas caso queira:")
+    print("[13] ou [22]?")
 
-print("\n\033[1m-------------\033[m")
-print("-----Média de notas Faesa------")
-print("\033[1m-------------\033[m\n")
+print("\n\033[1m--------------------------------\033[m")
+print("\033[1m     MÉDIA DE NOTAS FAESA     ")
+print("\033[1m--------------------------------\033[m\n")
 
 # Rescebendo as notas e armazenando nas variaveis c1, c2 e c3.
 c1 = float(input("Primeira nota: "))
@@ -69,12 +69,12 @@ else:
     else:
         print("REPROVADO!!!")
 
-print("\n\033[1m-------------\033[m")
-print("-----Custo da Gasolina------")
-print("\033[1m-------------\033[m\n")
+print("\n\033[1m-----------------------------\033[m")
+print("\033[1m      CUSTO DA GASOLINA      ")
+print("\033[1m-----------------------------\033[m\n")
 
 # Rescebendo as notas e armazenando-as nas variaveis.
-distancia = int(input("Quantos quilômetros são percorridos? "))
+distancia = int(input("Quantos quilômetros são percorridos no percurso? "))
 velocidade = int(input("Qual a velocidade média (Em km/h)? "))
 consumo = int(input("Qual a média de quilômetros percorridos por litro? "))
 preco = float(input("Qual o preço do litro de gasolina? "))
@@ -93,9 +93,9 @@ print(f"\nVocê irá demorar {(tempo/60)/60:.2f} horas no percurso")
 print(f"gastará {gasto:.1f} litros de gasolina")
 print(f"e o preço será de R$ {valor:.3f}")
 
-print("\n\033[1m-------------\033[m")
-print("-----Conversor de temperatura------")
-print("\033[1m-------------\033[m\n")
+print("\n\033[1m------------------------------------\033[m")
+print("      CONVERSOR DE TEMPERATURA      ")
+print("\033[1m------------------------------------\033[m\n")
 
 # Rescebendo o valor em fahrenheit
 valor = int(input("Diga a temperatura em fahrenheit: "))

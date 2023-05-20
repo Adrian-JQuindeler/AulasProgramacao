@@ -11,36 +11,36 @@ public class aumentoSalário {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Funcionário> empregados = new ArrayList<>();
-        System.out.println("Quantos empregados serão registrados?");
+        System.out.print("\nQuantos empregados serão registrados? ");
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            System.out.println("Empregado " + (i+1) + ": ");
+            System.out.print("\nEmpregado " + (i+1) + ": ");
             System.out.println("Id: ");
             int id = sc.nextInt();
-            System.out.println("Nome: ");
+            System.out.print("\nNome: ");
             sc.nextLine();
             String nome = sc.nextLine();
-            System.out.println("Salário: ");
+            System.out.print("\nSalário: ");
             double salario = sc.nextDouble();
             
             Funcionário empregado = new Funcionário(id, nome, salario);
             empregados.add(empregado);
         }
         
-        System.out.println("Qual o Id do funcionário que terá aumento no salário? ");
+        System.out.print("\nQual o Id do funcionário que terá aumento no salário? ");
         int numero = sc.nextInt();
         Integer pos = posicao(empregados, numero);
         if(pos == null) {
-        	System.out.println("Esse Id não existe!");
+        	System.out.println("\nEsse Id não existe!");
         }
         else {
-        	System.out.println("Qual a porcentagem de almento? ");
+        	System.out.print("Qual a porcentagem de aumento? ");
         	int porcento = sc.nextInt();
         	empregados.get(pos);
             empregados.get(pos).setSalario(Funcionário.calcularAumento(empregados.get(pos).getSalario(), porcento));
         }
         for (int i = 0; i < n; i++) {
-        System.out.println("Nome: " + empregados.get(i).getNome() + ", Id: " + empregados.get(i).getId() + ", Salário: " + empregados.get(i).getSalario());
+        System.out.println("\nNome: " + empregados.get(i).getNome() + ", Id: " + empregados.get(i).getId() + ", Salário: " + empregados.get(i).getSalario());
         }
         sc.close();
      }
