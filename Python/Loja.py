@@ -1,26 +1,61 @@
 def MostrarProdutos(listaDeProdutos):
-    print("\033[1;30;41m\nPRODUTOS: \033[m")
-    for i in range(0, len(listaDeProdutos)):
-        print(f"\033[1;30;41m    {listaDeProdutos[i][0]:.<24}", end = "")
+    print("\n\033[1;33;44m PRODUTOS: \033[m")
+    for i in range(len(listaDeProdutos)):
+        print(f"\033[1;33;44m    {listaDeProdutos[i][0]:.<24}", end = "")
         print(f"{listaDeProdutos[i][1]:.2f} \033[m")
 
-def ColocarNoCarrinho(carrinho, listaDeProdutos):
+def AdicionarItem(carrinho, listaDeProdutos):
+    print("\n\033[1;33;44m Digite o número do produto que deseja adicionar. \033[m"
+          "\n\033[1;33;44m Digite 0 para terminar. \033[m\n")
     while True:
         desejo = input("Qual produto deseja? ")
-        for i in range(0, len(listaDeProdutos)):
-            if desejo in listaDeProdutos[i][0][:4]:
-                carrinho.append([listaDeProdutos[i][0],listaDeProdutos[i][1]])
-        fim = input("Deseja mais algum produto? [S/N] ").lower()
-        if fim[0] == "n":
+        for i in range(len(listaDeProdutos)):
+            if desejo == '0':
+                break
+            elif desejo in listaDeProdutos[i][0][:4]:
+                carrinho.append(listaDeProdutos[i])
+                break
+        else:
+                print("Produto não encontrado.") 
+        if desejo == '0': 
             break
+
+def RemoverItem(carrinho):
+    if len(carrinho) == 0:
+        print("\n\033[1;33;44m O carrinho está vazio. \033[m")
+    else:    
+        print("\n\033[1;33;44m Digite o número do produto que deseja remover. \033[m"
+            "\n\033[1;33;44m Digite 0 para terminar. \033[m\n")
+        while True:
+                desejo = input("Qual produto deseja remover? ")
+                for i in range(len(carrinho)):
+                    if desejo == '0':
+                        break
+                    if desejo in carrinho[i][0][:3]:
+                        carrinho.remove(carrinho[i])
+                        break
+                else:
+                    print("Produto não encontrado no carrinho.")   
+                if desejo == '0':
+                    break
+
+def MostrarCarrinho(carrinho):
+    if len(carrinho) == 0:
+        print("\n\033[1;33;44m O carrinho está vazio. \033[m")
+    else:
+        print("\n\033[1;33;44m PRODUTOS ESCOLHIDOS: \033[m")
+        carrinho.sort()
+        for i in range(len(carrinho)):
+            print(f"\033[1;33;44m    {carrinho[i][0]:.<24}", end = "")
+            print(f"{carrinho[i][1]:.2f} \033[m")
 
 def MostrandoCompra(carrinho):
     total = 0
     carrinho.sort()
-    print(f"Os produtos escolhidos foram: ")
-    for i in range(0, len(carrinho)):
-        print(f"    {carrinho[i][0]:.<25}", end = "")
-        print(f"{carrinho[i][1]:.2f}")
+    print(f"\033[1;33;44m Seu carrinho: \033[m")
+    for i in range(len(carrinho)):
+        print(f"\033[1;33;44m    {carrinho[i][0]:.<25}", end = "")
+        print(f"{carrinho[i][1]:.2f}\033[m")
         total += carrinho[i][1]
     print(f"O valor total é: {total:.2f}")
 
@@ -35,16 +70,18 @@ listaDeProdutos = [
     ["[7] MONITOR", 861.47]]
 
 #Mostrando o nome da empresa
-print("\033[1;30;44m===================================\033[m")
-print("\033[1;30;44m     Adrian's & Adrian's LTDA.     \033[m")
-print("\033[1;30;44m===================================\033[m")
+print("\033[1;33;44m===================================\033[m")
+print("\033[1;33;44m     Adrian's & Adrian's LTDA.     \033[m")
+print("\033[1;33;44m===================================\033[m")
 
 carrinho = []
 while True:
     caminho = int(input("\nO que quer fazer?"
                     "\n[1] Ver a lista de produtos"
-                    "\n[2] Comprar um produto"
-                    "\n[3] Finalizar compra"
+                    "\n[2] Adicionar item ao carrinho"
+                    "\n[3] Remover item do carrinho"
+                    "\n[4] Mostrar carrinho"
+                    "\n[5] Finalizar compra"
                     "\nSua resposta: "))
     if caminho == 1:
         #Mostrando os produtos de forma organizada
@@ -52,10 +89,17 @@ while True:
         
     elif caminho == 2:
         #Colocando produtos no carrinho do cliente
-        ColocarNoCarrinho(carrinho, listaDeProdutos)
-        
+        AdicionarItem(carrinho, listaDeProdutos)
     
     elif caminho == 3:
+        #Removendo produtos no carrinho do cliente
+        RemoverItem(carrinho)    
+
+    elif caminho == 4:
+        #Mostrando o carrinho do cliente
+        MostrarCarrinho(carrinho)
+    
+    elif caminho == 5:
         #Terminando a venda
         MostrandoCompra(carrinho)
         resposta = input("Deseja finalizar a compra? [S/N] ").lower()
@@ -67,6 +111,7 @@ while True:
         else:
             print("Compra cancelada.")
         break
+    
     else:
         print("Resposta inválida!")
 print("Volte Sempre")
