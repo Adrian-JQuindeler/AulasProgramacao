@@ -4,14 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Reserva {
+public class Reservation {
     private Integer roomNumber;
     private Date checkIn;
     private Date checkOut;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
 
-    public Reserva(Integer roomNumber,  Date checkIn, Date checkOut){
+    public Reservation(Integer roomNumber,  Date checkIn, Date checkOut){
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
