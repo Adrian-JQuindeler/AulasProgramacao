@@ -1,11 +1,10 @@
-package Principal;
+package Hotel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import Model_entities.Reservation;
-import Model_exceptions.DomainExceptions;
+
 
 public class hotel {
     public static void main(String[] args) {
