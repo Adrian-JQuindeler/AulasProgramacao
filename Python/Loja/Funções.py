@@ -40,6 +40,7 @@ def AdicionarItem(carrinho, listaDeProdutos):
             print("digite apenas números\n")
 
 def RemoverItem(carrinho):
+    MostrarCarrinho(carrinho)
     if len(carrinho) == 0:
         print("\n\033[1;33;44m O carrinho está vazio. \033[m")
     else:    
