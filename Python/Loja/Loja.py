@@ -71,17 +71,23 @@ while True:
     elif caminho == 5:
         if len(carrinho) == 0:
             print("\n\033[1;33;44m Nenhum item foi selecionado. \033[m")
+            break
         else:
-            #Terminando a venda
-            Funções.MostrandoCompra(carrinho)
-            resposta = input("Deseja finalizar a compra? [S/N] ").lower()
-            if resposta == "s":
-                cep = input("Informe seu CEP: ")
-                
-                #Conclusão e despedida
-                Funções.FinalizarCompra(cep, carrinho, nome, email)
-            else:
-                print("Compra cancelada.")
+            while true:
+                #Terminando a venda
+                Funções.MostrandoCompra(carrinho)
+                resposta = input("Deseja finalizar a compra? [S/N] ").lower()
+                if resposta == "s":
+                    cep = input("Informe seu CEP: ")
+
+                    #Conclusão e despedida
+                    Funções.FinalizarCompra(cep, carrinho, nome, email)
+                    break
+                elif resposta == 'n':
+                    print("Compra cancelada.")
+                    break
+                else:
+                    print("Resposta inválida\n")
         break
     else:
         print("Resposta inválida!")
