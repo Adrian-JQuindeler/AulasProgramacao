@@ -18,6 +18,7 @@ def MostrarEspecificações(Especificações):
         print(f"\033[1;33;44m    {Especificações[i]}\033[m")
 
 def AdicionarItem(carrinho, listaDeProdutos):
+    MostrarProdutos(listaDeProdutos)
     print("\n\033[1;33;44m Digite o número do produto que deseja adicionar. \033[m"
           "\n\033[1;33;44m Digite 0 para terminar. \033[m\n")
     while True:
