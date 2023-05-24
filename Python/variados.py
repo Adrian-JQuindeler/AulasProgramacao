@@ -1,3 +1,66 @@
+print("\033[1m---------------\033[m")
+print("\033[1mURNA ELETRÔNICA\033[m")
+print("\033[1m---------------\033[m\n")
+votosThomas = 0
+votosJacinto = 0
+votosMia = 0
+votosChu= 0
+horario = 0
+while True:
+    horario = int(input("Digite a hora: "))
+    if horario > 18:
+        break
+    print("\nCandidatos: \n[13] Thomas Turbando \n[22] Jacinto Pinto Aquino Rego \n[44] Mia Regaça \n[12] Chu Passeios")
+    resposta = int(input("Seu voto: "))
+    if resposta == 13:
+        confirmar = input("Confirmar voto para 'Thomas Turbando'? [S/N]").upper()
+        if confirmar[0] == "S":
+            print("\n--------------------------------------")
+            print("Voto confirmado para 'Thomas Turbando'")
+            print("--------------------------------------")
+            votosThomas += 1
+        else:
+            print("Voto cancelado")
+    elif resposta == 22:
+        confirmar = input("Confirmar voto para 'Jacinto Pinto'? [S/N]").upper()
+        if confirmar[0] == "S":
+            print("\n------------------------------------")
+            print("Voto confirmado para 'Jacinto Pinto'")
+            print("------------------------------------")
+            votosJacinto += 1
+        else:
+            print("Voto cancelado")
+    elif resposta == 44:
+        confirmar = input("Confirmar voto para 'Mia Regaça'? [S/N]").upper()
+        if confirmar[0] == "S":
+            print("\n---------------------------------")
+            print("Voto confirmado para 'Mia Regaça'")
+            print("---------------------------------")
+            votosMia += 1
+        else:
+            print("Voto cancelado")
+    elif resposta == 12:
+        confirmar = input("Confirmar voto para 'Chu Passeios'? [S/N]").upper()
+        if confirmar[0] == "S":
+            print("\n-----------------------------------")
+            print("Voto confirmado para 'Chu passeios'")
+            print("-----------------------------------")
+            votosChu += 1
+        else:
+            print("Voto cancelado")
+    else:
+        print("\n-------------")
+        print("Voto Inválido")
+        print("-------------")
+
+print("\n-----------")
+print("RESULTADOS: ")
+print("-----------")
+print("Thomas Turbando = ", votosThomas)
+print("Jacinto Pinto Aquino Rego = ", votosJacinto)
+print("Mia Regaça = ", votosMia)
+print("Chu Passeios = ", votosChu)
+
 print("\n\033[1m----------------------------------\033[m")
 print("\033[1m   POSITIVO, NEGATIVO OU NEUTRO   \033[m")
 print("\033[1m----------------------------------\033[m\n")
@@ -23,20 +86,6 @@ elif salario < gastos:
     print("Orçamento estourado")
 else:
     print("Salario zerado")
-
-print("\n\033[1m---------------\033[m")
-print("\033[1m    VOTAÇÃO   \033[m")
-print("\033[1m---------------\033[m\n")
-
-idade = int(input("Digite sua idade: "))
-if idade >= 18 and idade < 65:
-    print("Você é obrigado a votar")
-    print("[13] ou [22]?")
-elif idade < 16:
-    print("Você não tem idade para votar!")
-else:
-    print("Você não é obrigado a votar, mas caso queira:")
-    print("[13] ou [22]?")
 
 print("\n\033[1m--------------------------------\033[m")
 print("\033[1m     MÉDIA DE NOTAS FAESA     ")

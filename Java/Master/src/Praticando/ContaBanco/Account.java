@@ -1,4 +1,4 @@
-package Praticando;
+package Praticando.ContaBanco;
 
 public class Account{
     private Integer number;

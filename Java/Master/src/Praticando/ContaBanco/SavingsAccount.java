@@ -1,4 +1,4 @@
-package Praticando;
+package Praticando.ContaBanco;
 
 public final class SavingsAccount extends Account{
     private Double interestRate;

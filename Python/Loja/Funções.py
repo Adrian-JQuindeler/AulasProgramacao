@@ -4,7 +4,7 @@ def MostrarProdutos(listaDeProdutos):
         if listaDeProdutos[i][0] < 10:
             print(f"\033[1;33;44m    {listaDeProdutos[i][0]}  {listaDeProdutos[i][1]:.<29}", end = "")
         else:
-            print(f"\033[1;33;44m    {listaDeProdutos[i][0]} {listaDeProdutos[i][1]:.<28}", end = "")
+            print(f"\033[1;33;44m    {listaDeProdutos[i][0]} {listaDeProdutos[i][1]:.<29}", end = "")
         if listaDeProdutos[i][2] < 100:
             print(f"..{listaDeProdutos[i][2]:.2f} \033[m")
         elif listaDeProdutos[i][2] < 1000:
@@ -12,10 +12,26 @@ def MostrarProdutos(listaDeProdutos):
         else:
             print(f"{listaDeProdutos[i][2]:.2f} \033[m")
 
-def MostrarEspecificações(Especificações):
-    print("\n\033[1;33;44m ESPECIFICAÇÕES: \033[m")
-    for i in range(len(Especificações)):
-        print(f"\033[1;33;44m    {Especificações[i]}\033[m")
+def MostrarEspecificações(Especificações, listaDeProdutos):
+    print("\n\033[1;33;44m Digite o número do produto para ver as especificações. \033[m"
+          "\n\033[1;33;44m Digite 0 para terminar. \033[m\n")
+    while True:
+        try:
+            desejo = int(input("\nnúmero produto: "))
+            if desejo == 0:
+                break
+            elif desejo < 0:
+                print("Apenas números maiores que 0\n")
+            else:
+                for i in range(len(listaDeProdutos)):
+                    if desejo == listaDeProdutos[i][1]:
+                        print(f"\n\033[1;33;44m Especificação de {listaDeProdutos[1][0]}: \033[m")
+                        print(f"\033[1;33;44m     {Especificações[i]}\033[m")
+                        break
+                else:
+                    print("Produto não encontrado.\n")
+        except:
+            print("digite apenas números\n")
 
 def AdicionarItem(carrinho, listaDeProdutos):
     MostrarProdutos(listaDeProdutos)
@@ -40,7 +56,7 @@ def AdicionarItem(carrinho, listaDeProdutos):
             print("digite apenas números\n")
 
 def RemoverItem(carrinho):
-    MostrarCarrinho(carrinho)
+    MostrandoCompra(carrinho)
     if len(carrinho) == 0:
         print("\n\033[1;33;44m O carrinho está vazio. \033[m")
     else:    
