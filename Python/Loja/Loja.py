@@ -1,15 +1,15 @@
 import Funções
 #Criando a lista com os produtos vendidos
 listaDeProdutos = [
-    [1, " COOLER + PROCESSADOR + SSD", 999.99],
-    [2, " PLACA-MÃE + MEMÓRIA RAM", 815.20],
-    [3, " MEMÓRIA RAM 16GB", 314.25],
-    [4, " PROCESSADOR", 729.99],
-    [5, " MOUSE PAD", 34.46],
-    [6, " PLACA-MÃE", 621.81],
-    [7, " GABINETE", 135.46],
-    [8, " MONITOR", 761.47],
-    [9, " MOUSE", 115.50],
+    [1, "COOLER + PROCESSADOR + SSD", 999.99],
+    [2, "PLACA-MÃE + MEMÓRIA RAM", 815.20],
+    [3, "MEMÓRIA RAM 16GB", 314.25],
+    [4, "PROCESSADOR", 729.99],
+    [5, "MOUSE PAD", 34.46],
+    [6, "PLACA-MÃE", 621.81],
+    [7, "GABINETE", 135.46],
+    [8, "MONITOR", 761.47],
+    [9, "MOUSE", 115.50],
     [10, "COOLER", 55.99],
     [11, "FONTE", 98.25],
     [12, "SSD", 249.00]]
@@ -66,14 +66,14 @@ while True:
 
     elif caminho == 4:
         #Mostrando o carrinho do cliente
-        Funções.MostrarCarrinho(carrinho)
+        Funções.MostrandoCompra(carrinho)
     
     elif caminho == 5:
         if len(carrinho) == 0:
             print("\n\033[1;33;44m Nenhum item foi selecionado. \033[m")
             break
         else:
-            while true:
+            while True:
                 #Terminando a venda
                 Funções.MostrandoCompra(carrinho)
                 resposta = input("Deseja finalizar a compra? [S/N] ").lower()
