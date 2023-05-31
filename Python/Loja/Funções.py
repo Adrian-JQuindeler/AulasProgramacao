@@ -24,14 +24,14 @@ def MostrarEspecificações(Especificações, listaDeProdutos):
                 print("Apenas números maiores que 0\n")
             else:
                 for i in range(len(listaDeProdutos)):
-                    if desejo == listaDeProdutos[i][1]:
-                        print(f"\n\033[1;33;44m Especificação de {listaDeProdutos[1][0]}: \033[m")
-                        print(f"\033[1;33;44m     {Especificações[i]}\033[m")
+                    if desejo == listaDeProdutos[i][0]:
+                        print(f"\n\033[1;33;44m Especificação de {listaDeProdutos[i][1]}: \033[m")
+                        print(f"\033[1;33;44m     {Especificações[i]} \033[m")
                         break
                 else:
                     print("Produto não encontrado.\n")
         except:
-            print("digite apenas números\n")
+            print("digite apenas números, e apenas inteiros: \n")
 
 def AdicionarItem(carrinho, listaDeProdutos):
     MostrarProdutos(listaDeProdutos)
@@ -86,14 +86,17 @@ def MostrandoCompra(carrinho):
     print(f"\033[1;33;44m Seu carrinho: \033[m")
     for i in range(len(carrinho)):
         total += carrinho[i][2]
-        print(f"\033[1;33;44m    {carrinho[i][1]:.<29}", end = "")
+        if carrinho[i][0] < 10:
+            print(f"\033[1;33;44m    {carrinho[i][0]}  {carrinho[i][1]:.<29}", end = "")
+        else:
+            print(f"\033[1;33;44m    {carrinho[i][0]} {carrinho[i][1]:.<29}", end = "")
         if carrinho[i][2] < 100:
             print(f"..{carrinho[i][2]:.2f} \033[m")
         elif carrinho[i][2] < 1000:
             print(f".{carrinho[i][2]:.2f} \033[m")
         else:
             print(f"{carrinho[i][2]:.2f} \033[m")
-    print(f"\033[1;33;44m    {'O valor total é:':.<29}", end = "")
+    print(f"\033[1;33;44m    {'O valor total é:':.<32}", end = "")
     if total < 100:
         print(f"..{total:.2f} \033[m")
     elif total < 1000:
@@ -105,10 +108,10 @@ def FinalizarCompra(CEP, carrinho, nome, email):
     if len(carrinho) == 1:
         print(f"Obrigado por comprar na Adrian's & Adrian's {nome},"
         f"\nQualquer novidade, enviaremos para o email: {email}."
-        f"\nO produto chegará no CEP {CEP[:1]}.{CEP[2:5]}-{CEP[-3:]} em até 30 dias."
+        f"\nO produto chegará no CEP {str(CEP)[:1]}.{str(CEP)[2:5]}-{str(CEP)[-3:]} em até 30 dias."
         "\nAgradecemos sua visita.")
     else:
         print(f"Obrigado por comprar na Adrian's & Adrian's {nome},"
         f"\nQualquer novidade, enviaremos para o email: {email}."
-        f"\nOs produtos chegaram no CEP {CEP[:1]}.{CEP[2:5]}-{CEP[-3:]} em até 30 dias."
+        f"\nOs produtos chegaram no CEP {str(CEP)[:1]}.{str(CEP)[2:5]}-{str(CEP)[-3:]} em até 30 dias."
         "\nAgradecemos sua visita.")
