@@ -3,7 +3,7 @@ package PrincípiosJava;
 public class Strings {
 
 	public static void main(String[] args) {
-		String original = " abc DEF gHi  abc JkL M nO pQ   ";
+		String original = " abc DEF gHi JkL MnO pQR stV WxYz";
 		String s1 = original.toLowerCase();
 		String s2 = original.toUpperCase();
 		String s3 = original.trim();
