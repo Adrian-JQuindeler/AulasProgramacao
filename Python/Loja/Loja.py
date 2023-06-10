@@ -18,14 +18,14 @@ Especificações = ["Pacote especial: Cooler + Processador + SSD",
     "Pacote especial: Placa-Mãe + Memória RAM",
     "Memória RAM 16gb",
     "Processador Intel Core i9-13900K, 24-Core, \n     32-Threads, 3.0GHz (5.8GHz Turbo)",
-    "SSD Kingston NV2 1TB NVMe M.2 2280",
     "Mouse pad para jogos RGB, 800 x 300 mm / 31,5 × 11,8 \n     polegadas",
     "Placa-Mãe Asus Prime A520M-E. ",
     "Gabinete TGT G250, Lateral Acrilico, \n     TGT-G250PR-01",
     "Monitor Gamer Mancer Horizon Z PRO, 27 Pol. VA, \n     FHD, 1ms, 165Hz, FreeSync, HDMI/DP",
     "Cooler Master líquido de CPU MasterLiquid \n     ML360 Illusion Close-Loop AIO",
     "Fonte Gamer GP650 80 Plus Bronze PFC Ativo \n     650W, PRETO",
-    "Mouse Gamer Sem Fio Logitech G703 LIGHTSPEED \n     com RGB LIGHTSYNC, 6 Botões Programáveis"]
+    "Mouse Gamer Sem Fio Logitech G703 LIGHTSPEED \n     com RGB LIGHTSYNC, 6 Botões Programáveis",
+    "SSD Kingston NV2 1TB NVMe M.2 2280"]
 
 #Mostrando o nome da empresa
 print("\033[1;33;44m===================================\033[m")
@@ -51,7 +51,7 @@ while True:
                             "\nSua resposta: "))
             break
         except:
-            print("Por favor, digite apenas números: ")
+            print("Por favor, digite apenas números, e apenas inteiros: ")
     if caminho == 1:
         #Mostrando especificações dos produtos
         Funções.MostrarEspecificações(Especificações, listaDeProdutos)
@@ -77,12 +77,18 @@ while True:
                 #Terminando a venda
                 Funções.MostrandoCompra(carrinho)
                 resposta = input("Deseja finalizar a compra? [S/N] ").lower()
-                if resposta == "s":
-                    cep = input("Informe seu CEP: ")
-
-                    #Conclusão e despedida
-                    Funções.FinalizarCompra(cep, carrinho, nome, email)
-                    break
+                if resposta[0] == "s":
+                  while True:
+                        cep = input("Informe seu CEP: ")
+                        if not cep.isdigit():
+                            print("O CEP precisa ter 8 dígitos!")
+                        elif len(str(cep)) != 8:
+                            print("Digite apenas números")
+                        else:
+                          break
+                  # Conclusão e despedida
+                  Funções.FinalizarCompra(cep, carrinho, nome, email)
+                  break
                 elif resposta == 'n':
                     print("Compra cancelada.")
                     break
